@@ -9,3 +9,6 @@ namespace: awesome-app-dev
 nameSuffix: "-dev"
 commonLabels:
   env: dev
+images:
+  - name: bespinian/awesome-image
+    newTag: 2.0.0

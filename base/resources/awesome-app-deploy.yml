@@ -18,7 +18,7 @@ spec:
       serviceAccountName: awesome-app-sa
       containers:
         - name: awesome-app
-          image: bespinian/awesome-image:latest
+          image: bespinian/awesome-image:1.0.0
           imagePullPolicy: Always
           env:
             - name: MESSAGE_1

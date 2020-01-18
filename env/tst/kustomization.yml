@@ -9,3 +9,6 @@ namespace: awesome-app-tst
 nameSuffix: "-tst"
 commonLabels:
   env: tst
+images:
+  - name: bespinian/awesome-image
+    newTag: 1.0.1
