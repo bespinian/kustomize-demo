@@ -6,5 +6,6 @@ metadata:
   name: awesome-app-config
   namespace: awesome-app
 data:
-  message1: hello
-  message2: velo
+  appTitle: Something awesome
+  dbHost: db.bespinian.io
+  appVersion: 1.0.0

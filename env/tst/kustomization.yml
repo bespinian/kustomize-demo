@@ -9,6 +9,13 @@ namespace: awesome-app-tst
 nameSuffix: "-tst"
 commonLabels:
   env: tst
+configMapGenerator:
+  - name: awesome-app-config
+    namespace: awesome-app
+    behavior: merge
+    literals:
+      - dbHost=db-tst.bespinian.io
+      - appVersion=1.0.1
 images:
   - name: bespinian/awesome-image
     newTag: 1.0.1

@@ -9,6 +9,13 @@ namespace: awesome-app-dev
 nameSuffix: "-dev"
 commonLabels:
   env: dev
+configMapGenerator:
+  - name: awesome-app-config
+    namespace: awesome-app
+    behavior: merge
+    literals:
+      - dbHost=db-dev.bespinian.io
+      - appVersion=2.0.0
 images:
   - name: bespinian/awesome-image
     newTag: 2.0.0

@@ -21,15 +21,20 @@ spec:
           image: bespinian/awesome-image:1.0.0
           imagePullPolicy: Always
           env:
-            - name: MESSAGE_1
+            - name: APP_TITLE
               valueFrom:
                 configMapKeyRef:
                   name: awesome-app-config
-                  key: message1
-            - name: MESSAGE_2
+                  key: appTitle
+            - name: DB_HOST
               valueFrom:
                 configMapKeyRef:
                   name: awesome-app-config
-                  key: message2
+                  key: dbHost
+            - name: APP_VERSION
+              valueFrom:
+                configMapKeyRef:
+                  name: awesome-app-config
+                  key: appVersion
           ports:
             - containerPort: 8080
