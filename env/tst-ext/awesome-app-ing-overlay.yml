@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: awesome-app-ing
+  namespace: awesome-app
+spec:
+  rules:
+    - host: awesome-tst-ext.bespinian.io
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: awesome-app
+              servicePort: 80
