@@ -4,6 +4,7 @@ metadata:
   labels:
     app: awesome-app
   name: awesome-app-config
+  namespace: awesome-app
 data:
   message1: hello
   message2: velo

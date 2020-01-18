@@ -6,3 +6,5 @@ resources:
   - resources/awesome-app-deploy.yml
   - resources/awesome-app-svc.yml
   - resources/awesome-app-ing.yml
+commonLabels:
+  env: prd

@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: awesome-app-deployment
+  namespace: awesome-app
   labels:
     app: awesome-app
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       component: awesome-app
