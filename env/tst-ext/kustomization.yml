@@ -1,13 +1,23 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
 resources:
   - ../tst
+
 patchesStrategicMerge:
   - awesome-app-ing-overlay.yml
+
 namespace: awesome-app-tst-ext
+
 nameSuffix: "-tst-ext"
+
 commonLabels:
   env: tst-ext
+
+images:
+  - name: bespinian/awesome-image
+    newTag: 1.0.1
+
 configMapGenerator:
   - name: awesome-app-config
     namespace: awesome-app
@@ -15,6 +25,3 @@ configMapGenerator:
     literals:
       - dbHost=db-tst-ext.bespinian.io
       - appVersion=1.0.1
-images:
-  - name: bespinian/awesome-image
-    newTag: 1.0.1

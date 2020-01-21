@@ -1,16 +1,26 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
 resources:
   - ../../base
   - ./resources/awesome-app-db-deploy.yml
   - ./resources/awesome-app-db-svc.yml
+
 patchesStrategicMerge:
   - awesome-app-ing-overlay.yml
   - awesome-app-deploy-overlay.yml
+
 namespace: awesome-app-dev
+
 nameSuffix: "-dev"
+
 commonLabels:
   env: dev
+
+images:
+  - name: bespinian/awesome-image
+    newTag: 2.0.0
+
 configMapGenerator:
   - name: awesome-app-config
     namespace: awesome-app
@@ -18,6 +28,3 @@ configMapGenerator:
     literals:
       - dbHost=db-dev
       - appVersion=2.0.0
-images:
-  - name: bespinian/awesome-image
-    newTag: 2.0.0

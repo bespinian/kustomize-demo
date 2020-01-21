@@ -1,10 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+
 resources:
   - resources/awesome-app-sa.yml
   - resources/awesome-app-cm.yml
   - resources/awesome-app-deploy.yml
   - resources/awesome-app-svc.yml
   - resources/awesome-app-ing.yml
-commonLabels:
-  env: prd
